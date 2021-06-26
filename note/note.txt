@@ -1,0 +1,87 @@
+
+JS 는 브라우저를 서버로 하여 제어하는 모델인 DOM, BOM 이 있음.
+GAS(Goolge App Script) 은 거기에 맞는 모델을 사용해야 함.
+Node.js 도 마찬가지로 거기에 맞는 모델을 사용해야함.
+
+console.log(location.toString(), location.href)
+
+console.log(location.protocol, location.host, location.port, location.pathname, location.search, location.hash)
+
+http://opentutorials.org:80/module/1?id=1#hash
+
+location.href = 'http://egoing.net';
+location = 'http://egoing.net';
+location.reload();
+
+브라우저 업체는 W3C, ECMA 스펙에 맞추어 구현
+JS 는 Netscape 가 만듦. IE 등장
+ : cross browser 이슈, navigator 객체 필요
+
+
+console.dir(navigator);
+navigator.appVersion;
+navigator.userAgent;
+navigator.platform;
+
+
+----
+// 버전차이에 의한 key 가 없는 경우
+
+// From https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys
+if (!Object.keys) {
+	 Object.keys = (function () {
+	 'use strict';
+	 var hasOwnProperty = Object.prototype.hasOwnProperty,
+ 		hasDontEnumBug = !({toString: null}).propertyIsEnumerable('toString'),
+		 dontEnums = [
+		 'toString',
+		 'toLocaleString',
+		 'valueOf',
+		 'hasOwnProperty',
+		 'isPrototypeOf',
+		 'propertyIsEnumerable',
+		 'constructor'
+		 ],
+	 	dontEnumsLength = dontEnums.length;
+
+	 return function (obj) {
+	 if (typeof obj !== 'object' && (typeof obj !== 'function' || obj === null)) {
+	 throw new TypeError('Object.keys called on non-object');
+	 }
+
+	 var result = [], prop, i;
+
+	 for (prop in obj) {
+	 if (hasOwnProperty.call(obj, prop)) {
+	 result.push(prop);
+	 }
+	 }
+
+	 if (hasDontEnumBug) {
+	 for (i = 0; i < dontEnumsLength; i++) {
+	 if (hasOwnProperty.call(obj, dontEnums[i])) {
+	 result.push(dontEnums[i]);
+	 }
+	 }
+	 }
+	 return result;
+	 };
+	 }());
+}
+---
+
+
+Document Object Model로 웹페이지를 자바스크립트로 제어하기 위한 객체 모델을 의미한다. window 객체의 document 프로퍼티를 통해서 사용할 수 있다. Window 객체가 창을 의미한다면 Document 객체는 윈도우에 로드된 문서를 의미한다고 할 수 있다. DOM의 하위 수업에서는 문서를 제어하는 방법에 대한 내용을 다룬다. 
+
+
+
+---
+
+# jQuery
+자주 사용하는 로직을 재사용할 수 있도록 고안된 소프트웨어를 라이브러리라고 한다.
+jQuery는 DOM을 내부에 감추고 보다 쉽게 웹페이지를 조작할 수 있도록 돕는 도구이다. jQuery의 효용은 후속 수업을 통해서 살펴보자.
+
+# go to jquery.com
+  Using jQuery with a CDN  검색
+
+  

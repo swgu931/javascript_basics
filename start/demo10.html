@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function numbering() {
+				i=0;
+				while(i<10) {
+					document.write(i+"<br />");
+					i+=1;
+				}
+			}
+			numbering();
+			numbering();
+			function get_member1(){
+			    return 'egoing';
+			}
+			alert(get_member1());
+
+			function get_arguments(arg1, arg2){
+				return arg1 + arg2
+			}
+
+			alert(get_arguments(10, 20));
+			alert(get_arguments(20, 30));
+
+			var numbering2 = function (){
+				i = 0;
+				while(i < 10){
+					document.write(i);
+				i += 2;
+				} 
+			}
+			numbering2();
+		</script>		
+	</body>
+</html>
