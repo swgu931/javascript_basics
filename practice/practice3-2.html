@@ -1,0 +1,36 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+/* 
+하기 동작을 만족하도록 이 부분에 제이쿼리 코드를 채우세요.
+(1) document가 완전히 로딩된 이후에 제이쿼리 코드가 동작하게 하세요.
+(2) 3개의 paragraph 중 가운데 paragraph에 대해서만 mouseover 시 toggleStyle이 적용되게 하고
+    mouseout시 원래대로 돌아오게 하세요.
+(3) 'Insert a new list item' 버튼 클릭 시 First list와 Last list 사이에 새로운 list(Middle list)가 삽입되게 하고
+    각 list 아이템 클릭 시 alert 창으로 "123"을 띄우게 하세요.
+(4) 'Remove alert event when clicking a list' 버튼 클릭 시 list item을 클릭해도 더이상 alert 창이 뜨지 않게 하세요.
+Hint : on(), off() 메소드를 이용하세요.
+*/
+</script>
+<style>
+.toggleStyle {
+    font-size: 120%;
+    color: blue;
+}
+</style>
+
+<body>
+
+    <div class="a">
+        <ul>
+            <li>First list</li>
+            <li id="last">Last list</li>
+        </ul>
+    </div>
+
+    <p>Fixed color paragraph.</p>
+    <p>Color changed paragraph.</p>
+    <p>Fixed color paragraph.</p>
+    <button id="btn1">Insert a new list item</button>
+    <button id="btn2">Remove alert event when clicking a list</button>
+
+</body>

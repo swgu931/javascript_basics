@@ -1,0 +1,44 @@
+<!-- <ul>
+	<li><a href="#">HTML</a></li>
+	<li><a href="#">CSS</a></li>
+	<li><a href="#">JavaScript</a></li>
+</ul>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+	$('ul').on('click','a, li', function(event){
+	console.log(this.tagName);
+	})
+</script>
+ -->
+<!-- 위의 예제는 ul 엘리먼트의 하위 엘리먼트 중에  a, li 엘리먼트들에 대해서만 이벤트가 발생한다. 주의 할 것은 ul 엘리먼트는 이벤트가 발생하지 않는다는 점이다. 이것은 jQuery에서 이벤트 버블링을 구현하는 방법이기도 하다.
+
+late binding
+jQuery는 존재하지 않는 엘리먼트에도 이벤트를 등록할 수 있는 놀라운 기능을 제공한다. 아래 코드를 보자.  -->
+
+<!-- <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+	$('ul').on('click','a, li', function(event){
+	console.log(this.tagName);
+	})
+</script>
+<ul>
+	<li><a href="#">HTML</a></li>
+	<li><a href="#">CSS</a></li>
+	<li><a href="#">JavaScript</a></li>
+</ul>
+ -->
+<!-- 위의 코드는 실행되지 않는다. ul 엘리먼트가 존재하지 않을 때 이벤트 설치를 시도하고 있기 때문이다. 존재하지 않는 엘리먼트에 이벤트를 달 수 없다는 것은 이미 배운 바가 있다. 그런데 jQuery는 존재하지 않는 엘리먼트에게도 이벤트를 설치할 수 있다.  -->
+
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+	$('body').on('click','a, li', function(event){
+		console.log(this.tagName);
+	})
+</script>
+<ul>
+	<li><a href="#">HTML</a></li>
+	<li><a href="#">CSS</a></li>
+	<li><a href="#">JavaScript</a></li>
+</ul>
+
+

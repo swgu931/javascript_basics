@@ -1,0 +1,24 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function() {
+/* 하기 Request 버튼을 클릭했을 때 다음 요건을 만족하는 Ajax 요청을 하도록 이 부분에 코드를 작성하세요.
+(1) .ajax() 사용
+(2) POST 요청
+(3) url은 /echo/json/
+(4) data type은 json
+(5) 전송할 data는 하기와 같은 형태이며 id/name에 원하는 값을 넣음.
+        data : {
+          json: JSON.stringify({id: 123, name: "mekey"}),
+          delay: 1
+        }
+    => 상기는 jsfiddle에서 /echo/json/ 사용시 전송 data 만드는 방식입니다.(http://doc.jsfiddle.net/use/echo.html 참조.)
+(6) 출력 결과는 alert 창으로 띄우되 id=XXX, name=XXX 형태로 출력되도록
+*/
+  });
+
+</script>
+
+<body>
+  <h2>Ajax Request Test</h2>
+  <button id="btn1">Request</button>
+</body>

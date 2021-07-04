@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>계산기</title>
+ 
+    <style>
+        table {font-size: 150%} {
+            border-collapse: separate;
+        }
+        td {
+            padding: 20px 35px;
+            text-align: center;
+        }
+        input {
+            text-align: right;
+            border: none;
+        }
+        input:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <table border="3">
+        <tr>
+            <td colspan="4">
+                <input type="text" id="display" style="font-size: 20pt; color: #ff0000; font-weight: bold;"> 
+            </td>
+        </tr>
+        <tr>
+            <td colspan="4">
+                <input type="text" id="result" style="font-size: 25pt; color: #ff0000; font-weight: bold;">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" onclick="clean()">AC</td>
+            <td onclick="add('/')">/</td>
+        </tr>
+        <tr>
+            <td onclick="add(7)">7</td>
+            <td onclick="add(8)">8</td>
+            <td onclick="add(9)">9</td>
+            <td onclick="add('*')">*</td>
+        </tr>
+        <tr>
+            <td onclick="add(4)">4</td>
+            <td onclick="add(5)">5</td>
+            <td onclick="add(6)">6</td>
+            <td onclick="add('-')">-</td>
+        </tr>
+        <tr>
+            <td onclick="add(1)">1</td>
+            <td onclick="add(2)">2</td>
+            <td onclick="add(3)">3</td>
+            <td onclick="add('+')">+</td>
+        </tr>
+        <tr>
+            <td colspan="2" onclick="add(0)">0</td>
+            <td onclick="add('.')">.</td>
+            <td onclick="calculate()">=</td>
+        </tr>
+    </table>
+
+    <script>
+        function add(char) {
+            var display = document.getElementById('display'); 
+            display.value = display.value + char;
+            
+            if (display.value[0].includes('/') || display.value[0].includes('+') || display.value[0].includes('-') || display.value[0].includes('*') || display.value[0].includes('=')) {
+                alert("숫자부터 입력하세요");
+                display.value = "";
+            }
+            else {
+                // display.value = display.value + char;
+            }
+        }
+        function calculate() {
+            var display = document.getElementById('display');
+            var sum = eval(display.value); 
+            if (sum == "Infinity") {
+                alert("0 으로 나눌 수 업습니다.");
+            }
+            else {
+                document.getElementById('result').value = eval(display.value);
+            }
+            
+        }
+         function clean() {
+            var display = document.getElementById('display');
+            var result = document.getElementById('result'); 
+            display.value = "";
+            result.value = "";
+        }
+    </script>
+</body>
+</html>
